@@ -1905,6 +1905,3 @@ body:has(.login-container) {
         height: 320px;
     }
 }
-body {
-    background: red !important;
-}
