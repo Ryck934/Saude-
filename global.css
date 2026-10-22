@@ -1,0 +1,1910 @@
+
+:root {
+    --cor-principal: #087F8C;
+    --cor-destaque: #10B981;
+    --cor-escura: #0F172A;
+    --cor-fundo: #F8FAFC;
+    --cor-branca: #FFFFFF;
+    --cor-borda: #E2E8F0;
+    --cor-erro: #DC2626;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--cor-escura);
+    background-color: var(--cor-fundo);
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* CABEÇALHO */
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 5%;
+    background-color: var(--cor-branca);
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.logo {
+    color: var(--cor-principal);
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navegacao {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.navegacao a {
+    color: var(--cor-escura);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.navegacao a:hover,
+.navegacao a[aria-current="page"] {
+    color: var(--cor-principal);
+}
+
+/* LOGIN */
+
+.login-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.login-formulario {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+    background-color: var(--cor-branca);
+}
+
+.login-conteudo {
+    width: 100%;
+    max-width: 420px;
+}
+
+.login-conteudo h2 {
+    margin: 0 0 12px;
+    color: var(--cor-escura);
+    font-size: 32px;
+}
+
+.login-conteudo p {
+    margin: 0;
+    color: #64748B;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.login-apresentacao {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px;
+    color: var(--cor-branca);
+    background-color: var(--cor-escura);
+}
+
+/* DASHBOARD */
+
+.dashboard {
+    padding: 36px 5%;
+}
+
+.boas-vindas {
+    padding: 36px;
+    border-radius: 18px;
+    color: var(--cor-branca);
+    background-color: var(--cor-principal);
+}
+
+.boas-vindas-texto {
+    max-width: 620px;
+}
+
+.etiqueta {
+    margin: 0 0 12px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.boas-vindas h2 {
+    margin: 0 0 12px;
+    font-size: 32px;
+}
+
+
+.boas-vindas-texto > p:not(.etiqueta) {
+    color: #E6FAF7;
+    max-width: 580px;
+    line-height: 1.8;
+}
+
+
+.botao-acao {
+    display: inline-block;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 10px;
+    color: var(--cor-principal);
+    background-color: var(--cor-branca);
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.botao-acao:hover {
+    transform: translateY(-2px);
+    background-color: #F0FDFA;
+}
+
+/* ATALHOS DO DASHBOARD */
+
+.atalhos {
+    margin-top: 36px;
+}
+
+.atalhos > h2 {
+    margin: 0 0 8px;
+    color: var(--cor-escura);
+    font-size: 24px;
+}
+
+.atalhos-descricao {
+    margin: 0 0 22px;
+    color: #64748B;
+    line-height: 1.6;
+}
+
+.atalhos-lista {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.atalho {
+    display: flex;
+    min-width: 0;
+    min-height: 220px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 16px;
+    color: var(--cor-escura);
+    background-color: var(--cor-branca);
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.atalho:hover {
+    transform: translateY(-3px);
+    border-color: var(--cor-principal);
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+}
+
+.atalho:focus-visible {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 4px;
+}
+
+.atalho-icone {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    color: var(--cor-principal);
+    background-color: #E6F5F5;
+}
+
+.atalho-icone svg {
+    width: 25px;
+    height: 25px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.atalho h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.atalho p {
+    margin: 0 0 18px;
+    color: #64748B;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.atalho-link {
+    margin-top: auto;
+    color: var(--cor-principal);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* ATENDIMENTOS */
+
+.proximos-atendimentos {
+    margin-top: 36px;
+}
+
+.secao-cabecalho {
+    margin-bottom: 20px;
+}
+
+.secao-cabecalho h2 {
+    margin: 0 0 8px;
+    font-size: 24px;
+}
+
+.secao-cabecalho p {
+    margin: 0;
+    color: #64748B;
+    line-height: 1.6;
+}
+
+#lista-atendimentos {
+    padding: 22px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 14px;
+    background-color: var(--cor-branca);
+}
+
+#mensagem-atendimentos {
+    margin: 0;
+    color: #64748B;
+    line-height: 1.6;
+}
+
+/* PÁGINAS DE ANOTAÇÕES E ORIENTAÇÕES */
+
+.pagina-anotacoes,
+.pagina-orientacoes {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+.introducao-anotacoes,
+.introducao-orientacoes {
+    margin-bottom: 32px;
+}
+
+.introducao-anotacoes h1,
+.introducao-orientacoes h1 {
+    margin: 0 0 12px;
+    color: var(--cor-escura);
+    font-size: 32px;
+}
+
+.introducao-anotacoes p,
+.introducao-orientacoes p {
+    color: #64748B;
+    line-height: 1.7;
+}
+
+/* CARTÕES DOS FORMULÁRIOS */
+
+.formulario-anotacoes,
+.lista-anotacoes,
+.categorias-orientacoes,
+.resultados-orientacoes {
+    margin-bottom: 24px;
+    padding: 28px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 16px;
+    background-color: var(--cor-branca);
+}
+
+.formulario-anotacoes h2,
+.lista-anotacoes h2,
+.categorias-orientacoes h2,
+.resultados-orientacoes h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--cor-escura);
+    font-size: 22px;
+}
+
+/* FORMULÁRIO DE ANOTAÇÕES */
+
+#form-anotacao,
+#form-busca {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#form-anotacao label,
+#form-busca label {
+    color: var(--cor-escura);
+    font-weight: 600;
+}
+
+#form-anotacao input,
+#form-anotacao textarea,
+#busca-sintomas {
+    width: 100%;
+    min-width: 0;
+    padding: 13px 14px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 9px;
+    color: var(--cor-escura);
+    background-color: var(--cor-branca);
+}
+
+#form-anotacao textarea {
+    resize: vertical;
+    font-family: inherit;
+}
+
+#form-anotacao input:focus,
+#form-anotacao textarea:focus,
+#busca-sintomas:focus {
+    outline: 2px solid var(--cor-principal);
+    outline-offset: 2px;
+}
+
+/* BOTÕES */
+
+#form-anotacao button,
+#form-busca button,
+#medicamentos-container button,
+#vacinas-container button {
+    width: fit-content;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 9px;
+    color: var(--cor-branca);
+    background-color: var(--cor-principal);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#form-anotacao button:hover,
+#form-busca button:hover {
+    background-color: #066873;
+}
+
+/* CARTÕES DE REGISTROS */
+
+#anotacoes-container,
+#lista-resultados,
+#medicamentos-container,
+#vacinas-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+#anotacoes-container article,
+#lista-resultados article,
+#medicamentos-container article,
+#vacinas-container article {
+    min-width: 0;
+    padding: 20px;
+    overflow-wrap: anywhere;
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    background-color: var(--cor-branca);
+}
+
+#anotacoes-container h3,
+#lista-resultados h3,
+#medicamentos-container h3,
+#vacinas-container h3 {
+    margin-top: 0;
+    color: var(--cor-escura);
+}
+
+#anotacoes-container p,
+#lista-resultados p,
+#medicamentos-container p,
+#vacinas-container p {
+    color: #475569;
+    line-height: 1.6;
+}
+
+#anotacoes-container p {
+    white-space: pre-wrap;
+}
+
+#mensagem-anotacoes,
+#mensagem-resultados,
+#mensagem-medicamentos,
+#mensagem-vacinas {
+    color: #64748B;
+    line-height: 1.6;
+}
+
+/* ORIENTAÇÕES DE SAÚDE */
+
+.campo-busca {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+}
+
+.campo-busca input {
+    flex: 1;
+    min-width: 0;
+}
+
+.categorias-orientacoes {
+    margin-top: 24px;
+}
+
+.lista-categorias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.lista-categorias button {
+    padding: 11px 16px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 9px;
+    color: var(--cor-escura);
+    background-color: var(--cor-branca);
+    cursor: pointer;
+}
+
+.lista-categorias button:hover {
+    border-color: var(--cor-principal);
+    color: var(--cor-principal);
+}
+
+.aviso-saude {
+    margin-bottom: 24px;
+    padding: 22px;
+    border-left: 4px solid var(--cor-principal);
+    border-radius: 8px;
+    background-color: #E6F5F5;
+}
+
+.aviso-saude h2 {
+    margin-top: 0;
+    color: var(--cor-escura);
+}
+
+.aviso-saude p {
+    color: #334155;
+    line-height: 1.6;
+}
+
+/* MEDICAMENTOS E VACINAS */
+
+.pagina-medicamentos,
+.pagina-vacinas {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+.introducao-medicamentos,
+.introducao-vacinas {
+    margin-bottom: 32px;
+}
+
+.introducao-medicamentos h1,
+.introducao-vacinas h1 {
+    margin: 0 0 12px;
+    color: var(--cor-escura);
+    font-size: 32px;
+}
+
+.introducao-medicamentos p,
+.introducao-vacinas p {
+    color: #64748B;
+    line-height: 1.7;
+}
+
+.formulario-medicamentos,
+.lista-medicamentos,
+.formulario-vacinas,
+.lista-vacinas {
+    margin-bottom: 24px;
+    padding: 28px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 16px;
+    background-color: var(--cor-branca);
+}
+
+.formulario-medicamentos h2,
+.lista-medicamentos h2,
+.formulario-vacinas h2,
+.lista-vacinas h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--cor-escura);
+    font-size: 22px;
+}
+
+#form-medicamento,
+#form-vacina {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#form-medicamento label,
+#form-vacina label {
+    color: var(--cor-escura);
+    font-weight: 600;
+}
+
+#form-medicamento input,
+#form-vacina input {
+    width: 100%;
+    min-width: 0;
+    padding: 13px 14px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 9px;
+    color: var(--cor-escura);
+    background-color: var(--cor-branca);
+}
+
+#form-medicamento input:focus,
+#form-vacina input:focus {
+    outline: 2px solid var(--cor-principal);
+    outline-offset: 2px;
+}
+
+#medicamentos-container button,
+#vacinas-container button {
+    color: #991B1B;
+    background-color: #FEE2E2;
+}
+
+/* AVISOS DE PRIVACIDADE */
+
+.aviso-privacidade {
+    margin: 24px 0;
+    color: #64748B;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 800px) {
+    .cabecalho {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .navegacao {
+        gap: 16px;
+    }
+
+    .login-formulario,
+    .login-apresentacao {
+        padding: 32px;
+    }
+}
+
+@media (max-width: 600px) {
+    .dashboard {
+        padding: 24px 4%;
+    }
+
+    .boas-vindas {
+        padding: 24px;
+    }
+
+    .boas-vindas h2 {
+        font-size: 26px;
+    }
+
+    .atalhos-lista,
+    #anotacoes-container,
+    #lista-resultados,
+    #medicamentos-container,
+    #vacinas-container {
+        grid-template-columns: 1fr;
+    }
+
+    .atalho {
+        min-height: 0;
+        padding: 20px;
+    }
+
+    .pagina-anotacoes,
+    .pagina-orientacoes,
+    .pagina-medicamentos,
+    .pagina-vacinas {
+        width: 92%;
+        margin: 24px auto;
+    }
+
+    .introducao-anotacoes h1,
+    .introducao-orientacoes h1,
+    .introducao-medicamentos h1,
+    .introducao-vacinas h1 {
+        font-size: 27px;
+    }
+
+    .formulario-anotacoes,
+    .lista-anotacoes,
+    .categorias-orientacoes,
+    .resultados-orientacoes,
+    .formulario-medicamentos,
+    .lista-medicamentos,
+    .formulario-vacinas,
+    .lista-vacinas {
+        padding: 20px;
+    }
+
+    .campo-busca {
+        flex-direction: column;
+    }
+
+    .campo-busca button {
+        width: 100%;
+    }
+
+    .login-container {
+        flex-direction: column;
+    }
+}
+
+/* Página de Unidades de Saúde */
+
+.pagina-unidades {
+    width: min(100% - 32px, 1000px);
+    margin: 40px auto;
+}
+
+.introducao-unidades {
+    padding: 36px;
+    background: var(--cor-branca);
+    border: 1px solid var(--cor-borda);
+    border-radius: 18px;
+    margin-bottom: 28px;
+}
+
+.introducao-unidades h1 {
+    color: var(--cor-escura);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin: 12px 0;
+}
+
+.introducao-unidades > p {
+    line-height: 1.7;
+}
+
+.introducao-unidades form {
+    margin-top: 24px;
+}
+
+.introducao-unidades label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.campo-busca {
+    display: flex;
+    gap: 10px;
+}
+
+.campo-busca input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px 14px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 9px;
+    font: inherit;
+}
+
+.campo-busca button,
+.lista-categorias button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 9px;
+    background: var(--cor-principal);
+    color: var(--cor-branca);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.campo-busca button:hover,
+.lista-categorias button:hover {
+    filter: brightness(0.92);
+}
+
+.campo-busca input:focus-visible,
+.campo-busca button:focus-visible,
+.lista-categorias button:focus-visible {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 3px;
+}
+
+.texto-apoio {
+    color: #475569;
+    font-size: 0.9rem;
+    margin-top: 12px;
+}
+
+.pagina-unidades .categorias-orientacoes,
+.pagina-unidades .aviso-saude {
+    margin-top: 24px;
+}
+
+@media (max-width: 600px) {
+    .introducao-unidades {
+        padding: 22px;
+    }
+
+    .campo-busca {
+        flex-direction: column;
+    }
+
+    .campo-busca button {
+        width: 100%;
+    }
+}
+
+/* Refinamento visual do dashboard */
+
+.dashboard {
+    width: min(100% - 32px, 1100px);
+    margin: 36px auto;
+}
+
+.boas-vindas {
+    border-radius: 22px;
+    overflow: hidden;
+    padding: clamp(28px, 5vw, 52px);
+    background: linear-gradient(135deg, #ECFDF5 0%, #F0FDFA 55%, #FFFFFF 100%);
+    border: 1px solid #CCFBF1;
+    margin-bottom: 36px;
+}
+
+.boas-vindas h2 {
+    color: #0F172A;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    letter-spacing: -0.04em;
+    margin: 10px 0 14px;
+}
+
+.boas-vindas p {
+    max-width: 650px;
+    line-height: 1.75;
+    color: #475569;
+}
+
+.atalhos {
+    margin: 36px 0;
+}
+
+.atalhos > h2,
+.proximos-atendimentos h2 {
+    color: #0F172A;
+    font-size: 1.65rem;
+    letter-spacing: -0.025em;
+}
+
+.atalhos-descricao {
+    color: #64748B;
+    margin-top: -4px;
+    margin-bottom: 22px;
+}
+
+.atalhos-lista {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.atalho {
+    min-width: 0;
+    padding: 24px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    text-decoration: none;
+    color: #0F172A;
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.035);
+    transition: transform 180ms ease, box-shadow 180ms ease,
+        border-color 180ms ease;
+}
+
+.atalho:hover {
+    transform: translateY(-3px);
+    border-color: #99DCD4;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.atalho:focus-visible {
+    outline: 3px solid #10B981;
+    outline-offset: 3px;
+}
+
+.atalho-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 18px;
+    border-radius: 13px;
+    background: #ECFDF5;
+    color: #087F8C;
+}
+
+.atalho h3 {
+    margin: 0 0 8px;
+    font-size: 1.08rem;
+}
+
+.atalho p {
+    color: #64748B;
+    line-height: 1.6;
+    margin: 0 0 18px;
+}
+
+.atalho-link {
+    color: #087F8C;
+    font-weight: 600;
+    font-size: 0.92rem;
+}
+
+@media (max-width: 600px) {
+    .dashboard {
+        width: min(100% - 24px, 1100px);
+        margin: 24px auto;
+    }
+
+    .boas-vindas {
+        padding: 26px 22px;
+        border-radius: 16px;
+    }
+
+    .atalhos-lista {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .atalho {
+        padding: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .atalho {
+        transition: none;
+    }
+
+    .atalho:hover {
+        transform: none;
+    }
+}
+
+/* Cartões da página Orientações de Saúde */
+
+#lista-resultados {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.orientacao-card {
+    padding: 24px;
+    background: var(--cor-branca);
+    border: 1px solid var(--cor-borda);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+}
+
+.orientacao-categoria {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: #ECFDF5;
+    color: var(--cor-principal);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.orientacao-card h3 {
+    margin: 0 0 12px;
+    color: var(--cor-escura);
+    font-size: 1.15rem;
+}
+
+.orientacao-card p {
+    color: #475569;
+    line-height: 1.7;
+}
+
+.orientacao-card .orientacao-aviso {
+    margin-top: 16px;
+    padding: 12px;
+    border-left: 3px solid var(--cor-erro);
+    border-radius: 4px;
+    background: #FEF2F2;
+    color: #991B1B;
+    font-size: 0.9rem;
+}
+
+#mensagem-resultados {
+    margin-top: 20px;
+    color: #64748B;
+}
+
+@media (max-width: 600px) {
+    #lista-resultados {
+        grid-template-columns: 1fr;
+    }
+
+    .orientacao-card {
+        padding: 20px;
+    }
+}
+
+/* ========================================
+   SAÚDE+ | LOGIN REDESENHADO
+======================================== */
+
+body:has(.login-container) {
+    min-height: 100vh;
+    background: #F3F6FC;
+    color: #111B35;
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+.login-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    padding: 24px;
+    gap: 24px;
+}
+
+/* Painel de apresentação */
+
+.login-apresentacao {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    min-height: calc(100vh - 48px);
+    padding: clamp(32px, 5vw, 72px);
+    border-radius: 28px;
+    color: #FFFFFF;
+    background: linear-gradient(
+        145deg,
+        #10204A 0%,
+        #1746A2 55%,
+        #2878F0 100%
+    );
+    isolation: isolate;
+}
+
+.login-apresentacao::before,
+.login-apresentacao::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.login-apresentacao::before {
+    width: 440px;
+    height: 440px;
+    right: -180px;
+    top: 15%;
+    box-shadow:
+        0 0 0 35px rgba(255, 255, 255, 0.035),
+        0 0 0 75px rgba(255, 255, 255, 0.025);
+}
+
+.login-apresentacao::after {
+    width: 300px;
+    height: 300px;
+    left: -150px;
+    bottom: -100px;
+    box-shadow: 0 0 0 35px rgba(255, 255, 255, 0.04);
+}
+
+.login-apresentacao h1 {
+    margin: 0;
+    font-size: clamp(2.8rem, 5vw, 4.8rem);
+    font-weight: 800;
+    letter-spacing: -0.075em;
+}
+
+.login-apresentacao p {
+    max-width: 430px;
+    margin: 20px 0 0;
+    color: #DFE9FF;
+    font-size: clamp(1.1rem, 2vw, 1.45rem);
+    line-height: 1.7;
+}
+
+.login-apresentacao::selection {
+    background: #FFFFFF;
+    color: #1746A2;
+}
+
+/* Área do formulário */
+
+.login-formulario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    padding: clamp(20px, 5vw, 64px);
+    background: #FFFFFF;
+    border: 1px solid #E4EAF4;
+    border-radius: 28px;
+}
+
+.login-conteudo {
+    width: 100%;
+    max-width: 410px;
+}
+
+.login-conteudo h2 {
+    margin: 0 0 12px;
+    color: #111B35;
+    font-size: clamp(1.9rem, 3vw, 2.5rem);
+    font-weight: 750;
+    letter-spacing: -0.05em;
+    line-height: 1.2;
+}
+
+.login-conteudo > p {
+    margin: 0 0 36px;
+    color: #6B7892;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Campos */
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-login .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-login .campo label {
+    color: #263552;
+    font-size: 0.92rem;
+    font-weight: 650;
+}
+
+.form-login .campo input {
+    width: 100%;
+    min-height: 56px;
+    padding: 0 16px;
+    border: 1px solid #D8E0ED;
+    border-radius: 12px;
+    outline: none;
+    background: #F8FAFE;
+    color: #111B35;
+    font: inherit;
+    font-size: 1rem;
+    transition:
+        border-color 180ms ease,
+        box-shadow 180ms ease,
+        background 180ms ease;
+}
+
+.form-login .campo input::placeholder {
+    color: #9AA6BA;
+}
+
+.form-login .campo input:hover {
+    border-color: #AABBD7;
+}
+
+.form-login .campo input:focus {
+    border-color: #2867E8;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 4px rgba(40, 103, 232, 0.12);
+}
+
+/* Botão principal */
+
+.botao-continuar {
+    width: 100%;
+    min-height: 56px;
+    margin-top: 8px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(100deg, #2055D6, #3478F6);
+    color: #FFFFFF;
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(37, 91, 216, 0.2);
+    transition:
+        transform 180ms ease,
+        box-shadow 180ms ease,
+        filter 180ms ease;
+}
+
+.botao-continuar:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.06);
+    box-shadow: 0 12px 24px rgba(37, 91, 216, 0.26);
+}
+
+.botao-continuar:active {
+    transform: translateY(0);
+}
+
+.botao-continuar:focus-visible {
+    outline: 3px solid #8BB4FF;
+    outline-offset: 4px;
+}
+
+/* Celulares e telas menores */
+
+@media (max-width: 760px) {
+    .login-container {
+        grid-template-columns: 1fr;
+        min-height: 100vh;
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .login-apresentacao {
+        min-height: 220px;
+        padding: 28px;
+        border-radius: 20px;
+    }
+
+    .login-apresentacao h1 {
+        font-size: 2.8rem;
+    }
+
+    .login-apresentacao p {
+        max-width: 330px;
+        margin-top: 10px;
+        font-size: 1.05rem;
+    }
+
+    .login-formulario {
+        padding: 36px 24px;
+        border-radius: 20px;
+    }
+
+    .login-conteudo h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .login-apresentacao {
+        min-height: 190px;
+        padding: 24px;
+    }
+
+    .login-formulario {
+        padding: 28px 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .form-login .campo input,
+    .botao-continuar {
+        transition: none;
+    }
+
+    .botao-continuar:hover {
+        transform: none;
+    }
+}
+
+/* ========================================
+   LOGIN SAÚDE+ | IDENTIDADE VISUAL OFICIAL
+======================================== */
+
+body:has(.login-container) {
+    background: var(--cor-fundo);
+}
+
+.login-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    min-height: 100vh;
+    padding: 24px;
+}
+
+/* Painel de apresentação */
+
+.login-apresentacao {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    min-width: 0;
+    padding: clamp(32px, 5vw, 72px);
+    border-radius: 20px;
+    color: var(--cor-branca);
+    background: var(--cor-principal);
+    isolation: isolate;
+}
+
+.login-apresentacao::before,
+.login-apresentacao::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.login-apresentacao::before {
+    width: 360px;
+    height: 360px;
+    top: 12%;
+    right: -150px;
+    box-shadow:
+        0 0 0 35px rgba(255, 255, 255, 0.04),
+        0 0 0 75px rgba(255, 255, 255, 0.035);
+}
+
+.login-apresentacao::after {
+    width: 220px;
+    height: 220px;
+    bottom: -100px;
+    left: -80px;
+    box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.04);
+}
+
+.login-apresentacao h1 {
+    margin: 0 0 16px;
+    font-size: clamp(42px, 5vw, 64px);
+    font-weight: 800;
+    letter-spacing: -2.5px;
+}
+
+.login-apresentacao p {
+    max-width: 360px;
+    margin: 0;
+    color: #E6FAF7;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* Formulário */
+
+.login-formulario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    padding: clamp(24px, 5vw, 64px);
+    border: 1px solid var(--cor-borda);
+    border-radius: 20px;
+    background: var(--cor-branca);
+}
+
+.login-conteudo {
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-conteudo h2 {
+    margin: 0 0 12px;
+    color: var(--cor-escura);
+    font-size: clamp(28px, 3vw, 36px);
+    letter-spacing: -1px;
+}
+
+.login-conteudo > p {
+    margin: 0 0 34px;
+    color: #64748B;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Campos de nome e idade */
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.form-login .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.form-login .campo label {
+    color: var(--cor-escura);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-login .campo input {
+    width: 100%;
+    min-height: 52px;
+    padding: 0 15px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 9px;
+    outline: none;
+    background: var(--cor-fundo);
+    color: var(--cor-escura);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-login .campo input::placeholder {
+    color: #94A3B8;
+}
+
+.form-login .campo input:focus {
+    border-color: var(--cor-principal);
+    background: var(--cor-branca);
+    box-shadow: 0 0 0 3px rgba(8, 127, 140, 0.12);
+}
+
+/* Botão */
+
+.botao-continuar {
+    width: 100%;
+    min-height: 52px;
+    margin-top: 6px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 9px;
+    background: var(--cor-principal);
+    color: var(--cor-branca);
+    font-weight: 700;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.botao-continuar:hover {
+    background: #066873;
+    transform: translateY(-2px);
+}
+
+.botao-continuar:focus-visible {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 3px;
+}
+
+/* Responsividade */
+
+@media (max-width: 760px) {
+    .login-container {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 14px;
+    }
+
+    .login-apresentacao {
+        min-height: 210px;
+        padding: 30px;
+        border-radius: 16px;
+    }
+
+    .login-apresentacao h1 {
+        font-size: 42px;
+    }
+
+    .login-apresentacao p {
+        font-size: 16px;
+    }
+
+    .login-formulario {
+        padding: 36px 24px;
+        border-radius: 16px;
+    }
+
+    .login-conteudo h2 {
+        font-size: 29px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .botao-continuar {
+        transition: none;
+    }
+
+    .botao-continuar:hover {
+        transform: none;
+    }
+}
+
+/* FINALIZAÇÃO DO DASHBOARD SAÚDE+ */
+
+.dashboard {
+    width: 90%;
+    max-width: 1120px;
+    margin: 36px auto;
+    padding: 0;
+}
+
+.boas-vindas {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(28px, 5vw, 48px);
+    border: 1px solid #087F8C;
+    border-radius: 18px;
+    background: linear-gradient(120deg, #087F8C, #096D78);
+}
+
+.boas-vindas-texto {
+    position: relative;
+    z-index: 1;
+    max-width: 650px;
+}
+
+.boas-vindas h2 {
+    font-size: clamp(28px, 4vw, 36px);
+    line-height: 1.2;
+}
+
+.boas-vindas-texto > p:not(.etiqueta) {
+    max-width: 580px;
+    line-height: 1.8;
+}
+
+.atalhos {
+    margin-top: 40px;
+}
+
+.atalhos-lista {
+    align-items: stretch;
+    gap: 20px;
+}
+
+.atalho {
+    min-height: 225px;
+    padding: 26px;
+    border-radius: 14px;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.atalho:hover {
+    transform: translateY(-3px);
+    border-color: var(--cor-principal);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
+}
+
+.atalho-icone {
+    flex-shrink: 0;
+    background: #e6f5f5;
+}
+
+.atalho h3 {
+    overflow-wrap: anywhere;
+}
+
+.atalho p {
+    line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+    .dashboard {
+        width: calc(100% - 28px);
+        margin: 24px auto;
+    }
+
+    .boas-vindas {
+        padding: 28px 22px;
+        border-radius: 14px;
+    }
+
+    .atalhos {
+        margin-top: 30px;
+    }
+
+    .atalhos-lista {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .atalho {
+        min-height: 0;
+        padding: 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .atalho {
+        transition: none;
+    }
+
+    .atalho:hover {
+        transform: none;
+    }
+}
+
+/* =====================================
+   MEDICAMENTOS E VACINAS
+   Identidade visual Saúde+
+===================================== */
+
+.pagina-medicamentos,
+.pagina-vacinas {
+    width: calc(100% - 40px);
+    max-width: 1080px;
+    margin: 36px auto 56px;
+    color: var(--cor-escura);
+}
+
+/* Banner de introdução */
+
+.introducao-medicamentos,
+.introducao-vacinas {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(28px, 5vw, 44px);
+    margin-bottom: 28px;
+    border: 1px solid #087F8C;
+    border-radius: 18px;
+    background: linear-gradient(125deg, #087F8C, #096D78);
+    color: #FFFFFF;
+}
+
+.introducao-medicamentos h1,
+.introducao-vacinas h1 {
+    margin: 0 0 14px;
+    color: #FFFFFF;
+    font-size: clamp(28px, 4vw, 38px);
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+}
+
+.introducao-medicamentos p,
+.introducao-vacinas p {
+    max-width: 650px;
+    margin: 0;
+    color: #E6FAF7;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Cartões de formulário e registros */
+
+.formulario-medicamentos,
+.formulario-vacinas,
+.lista-medicamentos,
+.lista-vacinas {
+    min-width: 0;
+    padding: clamp(22px, 4vw, 32px);
+    margin-bottom: 24px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 16px;
+    background: var(--cor-branca);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.035);
+}
+
+.formulario-medicamentos h2,
+.formulario-vacinas h2,
+.lista-medicamentos h2,
+.lista-vacinas h2 {
+    margin: 0 0 22px;
+    color: var(--cor-escura);
+    font-size: 22px;
+    letter-spacing: -0.3px;
+}
+
+/* Formulários */
+
+#form-medicamento,
+#form-vacina {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#form-medicamento label,
+#form-vacina label {
+    margin-top: 8px;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#form-medicamento input,
+#form-vacina input {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 9px;
+    outline: none;
+    background: #F8FAFC;
+    color: var(--cor-escura);
+    font: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s,
+        background-color 0.2s;
+}
+
+#form-medicamento input::placeholder,
+#form-vacina input::placeholder {
+    color: #94A3B8;
+}
+
+#form-medicamento input:focus,
+#form-vacina input:focus {
+    border-color: var(--cor-principal);
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(8, 127, 140, 0.12);
+}
+
+#form-medicamento button,
+#form-vacina button {
+    align-self: flex-start;
+    min-height: 48px;
+    padding: 13px 22px;
+    margin-top: 16px;
+    border: none;
+    border-radius: 9px;
+    background: var(--cor-principal);
+    color: #FFFFFF;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+#form-medicamento button:hover,
+#form-vacina button:hover {
+    background: #066873;
+    transform: translateY(-1px);
+}
+
+#form-medicamento button:focus-visible,
+#form-vacina button:focus-visible {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 3px;
+}
+
+/* Mensagens e listas */
+
+#mensagem-medicamentos,
+#mensagem-vacinas {
+    color: #64748B;
+    line-height: 1.7;
+}
+
+#medicamentos-container,
+#vacinas-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 18px;
+}
+
+/* Cartões criados pelo JavaScript */
+
+#medicamentos-container > *,
+#vacinas-container > * {
+    min-width: 0;
+    padding: 20px;
+    overflow-wrap: anywhere;
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    background: #FFFFFF;
+}
+
+#medicamentos-container h3,
+#vacinas-container h3 {
+    margin-top: 0;
+    color: var(--cor-principal);
+}
+
+#medicamentos-container p,
+#vacinas-container p {
+    color: #475569;
+    line-height: 1.7;
+}
+
+#medicamentos-container button,
+#vacinas-container button {
+    padding: 9px 13px;
+    border: 1px solid #FECACA;
+    border-radius: 8px;
+    background: #FEF2F2;
+    color: #B91C1C;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#medicamentos-container button:hover,
+#vacinas-container button:hover {
+    background: #FEE2E2;
+}
+
+/* Avisos de privacidade */
+
+.aviso-privacidade {
+    padding: 16px 18px;
+    border: 1px solid var(--cor-borda);
+    border-left: 4px solid var(--cor-principal);
+    border-radius: 10px;
+    background: #F1F9F9;
+    color: #475569;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* Adaptação para celulares */
+
+@media (max-width: 650px) {
+    .pagina-medicamentos,
+    .pagina-vacinas {
+        width: calc(100% - 28px);
+        margin: 24px auto 36px;
+    }
+
+    .introducao-medicamentos,
+    .introducao-vacinas {
+        padding: 26px 22px;
+        border-radius: 14px;
+    }
+
+    .formulario-medicamentos,
+    .formulario-vacinas,
+    .lista-medicamentos,
+    .lista-vacinas {
+        padding: 22px 18px;
+    }
+
+    #medicamentos-container,
+    #vacinas-container {
+        grid-template-columns: 1fr;
+    }
+
+    #form-medicamento button,
+    #form-vacina button {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #form-medicamento input,
+    #form-vacina input,
+    #form-medicamento button,
+    #form-vacina button {
+        transition: none;
+    }
+
+    #form-medicamento button:hover,
+    #form-vacina button:hover {
+        transform: none;
+    }
+}
+
+.boas-vindas .etiqueta {
+    color: #E6FAF7;
+}
+
+/* Área de resultados do Google Maps */
+.mapa-unidades {
+    margin-top: 30px;
+    padding: 24px;
+    background-color: var(--cor-branca);
+    border: 1px solid var(--cor-borda);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    scroll-margin-top: 24px;
+}
+
+/* Esconde o mapa antes da primeira pesquisa */
+.mapa-unidades[hidden] {
+    display: none;
+}
+
+/* Título dos resultados */
+.mapa-unidades h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: var(--cor-escura);
+}
+
+/* Mapa incorporado */
+.mapa-unidades iframe {
+    display: block;
+    width: 100%;
+    height: 420px;
+    border: 0;
+    border-radius: 12px;
+    background-color: var(--cor-fundo);
+}
+
+/* Texto abaixo do mapa */
+.mapa-unidades .texto-apoio {
+    margin: 16px 0;
+    line-height: 1.6;
+}
+
+/* Link para abrir o Google Maps completo */
+.mapa-unidades a {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--cor-principal);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* Ajustes para celulares */
+@media (max-width: 600px) {
+    .mapa-unidades {
+        padding: 14px;
+    }
+
+    .mapa-unidades iframe {
+        height: 320px;
+    }
+}
+body {
+    background: red !important;
+}

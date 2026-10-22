@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Encontre unidades de saúde e consulte rotas para atendimento.">
+
+    <title>Unidades de Saúde | Saúde+</title>
+
+    <!-- HREF DO CSS -->
+    <link rel="stylesheet" href="global.css">
+
+    <!-- JAVASCRIPT -->
+    <script src="unidades.js" defer></script>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <a href="dashboard.html" class="logo">Saúde+</a>
+
+        <nav class="navegacao" aria-label="Navegação principal">
+            <a href="dashboard.html">Início</a>
+            <a href="orientacoes.html">Orientações de Saúde</a>
+            <a href="unidades.html" aria-current="page">Unidades de Saúde</a>
+        </nav>
+    </header>
+
+    <main class="pagina-unidades">
+        <section class="introducao-unidades">
+            <p class="etiqueta">ATENDIMENTO PERTO DE VOCÊ</p>
+
+            <h1>Encontre uma unidade de saúde</h1>
+
+            <p>
+                Pesquise hospitais, Unidades Básicas de Saúde (UBS),
+                clínicas e outros serviços de atendimento.
+            </p>
+
+            <form id="form-unidades">
+                <label for="busca-unidades">
+                    Qual unidade você procura?
+                </label>
+
+                <div class="campo-busca">
+                    <input
+                        type="search"
+                        id="busca-unidades"
+                        placeholder="Ex.: UBS em Paulista, PE"
+                        required
+                        maxlength="120"
+                    >
+
+                    <button type="submit">Pesquisar</button>
+                </div>
+            </form>
+
+            <p class="texto-apoio">
+                Pesquise uma unidade e visualize os resultados do
+                Google Maps diretamente nesta página.
+            </p>
+        </section>
+
+        <section class="categorias-orientacoes">
+            <h2>Pesquisar por tipo de atendimento</h2>
+
+            <p>Escolha uma opção para iniciar sua pesquisa.</p>
+
+            <div class="lista-categorias">
+                <button type="button" data-tipo="UBS em Paulista, Pernambuco">
+                    UBS
+                </button>
+
+                <button type="button" data-tipo="Hospitais em Paulista, Pernambuco">
+                    Hospitais
+                </button>
+
+                <button type="button" data-tipo="UPAs em Paulista, Pernambuco">
+                    UPAs
+                </button>
+
+                <button type="button" data-tipo="Clínicas médicas em Paulista, Pernambuco">
+                    Clínicas
+                </button>
+            </div>
+
+            <!-- MAPA APARECE AQUI -->
+            <div id="mapa-unidades" class="mapa-unidades" hidden>
+                <h2 id="titulo-mapa">Resultados da pesquisa</h2>
+
+                <iframe
+                    id="google-maps"
+                    title="Mapa de unidades de saúde"
+                    src="about:blank"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen>
+                </iframe>
+
+                <p class="texto-apoio">
+                    Confira os endereços e as informações da unidade
+                    antes de se deslocar. O Saúde+ não verifica em tempo
+                    real a disponibilidade de atendimento.
+                </p>
+
+                <a
+                    id="abrir-google-maps"
+                    href="https://maps.google.com/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Abrir pesquisa completa no Google Maps
+                </a>
+            </div>
+        </section>
+
+        <section class="aviso-saude">
+            <h2>Precisa de atendimento urgente?</h2>
+
+            <p>
+                Em uma emergência médica, ligue para o SAMU pelo número
+                192 ou procure um serviço de emergência.
+            </p>
+        </section>
+    </main>
+</body>
+</html>

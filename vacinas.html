@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Registre as vacinas recebidas e as datas das próximas doses."
+    >
+
+    <title>Vacinas | Saúde+</title>
+
+    <link rel="stylesheet" href="global.css">
+    <script src="vacinas.js" defer></script>
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <a href="dashboard.html" class="logo">Saúde+</a>
+
+        <nav class="navegacao" aria-label="Navegação principal">
+            <a href="dashboard.html">Início</a>
+            <a href="orientacoes.html">Orientações de Saúde</a>
+            <a href="vacinas.html" aria-current="page">Vacinas</a>
+        </nav>
+    </header>
+
+    <main class="pagina-vacinas">
+
+        <section class="introducao-vacinas">
+            <h1>Meu histórico de vacinas</h1>
+
+            <p>
+                Registre as vacinas recebidas e consulte as datas
+                anotadas para acompanhar seu histórico.
+            </p>
+        </section>
+
+        <section class="formulario-vacinas">
+            <h2>Registrar vacina</h2>
+
+            <form id="form-vacina">
+
+                <label for="nome-vacina">
+                    Nome da vacina
+                </label>
+
+                <input
+                    type="text"
+                    id="nome-vacina"
+                    name="nome"
+                    placeholder="Ex.: Nome da vacina"
+                    maxlength="100"
+                    required
+                >
+
+                <label for="data-dose">
+                    Data da dose recebida
+                </label>
+
+                <input
+                    type="date"
+                    id="data-dose"
+                    name="dataDose"
+                    required
+                >
+
+                <label for="proxima-dose">
+                    Data da próxima dose, se aplicável
+                </label>
+
+                <input
+                    type="date"
+                    id="proxima-dose"
+                    name="proximaDose"
+                >
+
+                <button type="submit">Salvar vacina</button>
+
+            </form>
+        </section>
+
+        <section class="lista-vacinas">
+            <h2>Vacinas registradas</h2>
+
+            <p id="mensagem-vacinas" aria-live="polite">
+                Suas vacinas registradas aparecerão aqui.
+            </p>
+
+            <div id="vacinas-container"></div>
+        </section>
+
+        <p class="aviso-privacidade">
+            Este histórico é preenchido manualmente e não confirma
+            a validade das doses. Confira seu cartão de vacinação
+            e as orientações de um profissional de saúde.
+        </p>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anotações | Saúde+</title>
+
+    <link rel="stylesheet" href="global.css">
+    <script src="anotacoes.js" defer></script>
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <a href="dashboard.html" class="logo">Saúde+</a>
+
+        <nav class="navegacao" aria-label="Navegação principal">
+            <a href="dashboard.html">Início</a>
+            <a href="orientacoes.html">Orientações de Saúde</a>
+            <a href="anotacoes.html" aria-current="page">Anotações</a>
+        </nav>
+    </header>
+
+    <main class="pagina-anotacoes">
+
+        <section class="introducao-anotacoes">
+            <h1>Minhas anotações</h1>
+            <p>
+                Organize lembretes, tarefas e perguntas
+                que deseja fazer a um profissional de saúde.
+            </p>
+        </section>
+
+        <section class="formulario-anotacoes">
+            <h2>Nova anotação</h2>
+
+            <form id="form-anotacao">
+
+                <label for="titulo-anotacao">Título</label>
+                <input
+                    type="text"
+                    id="titulo-anotacao"
+                    name="titulo"
+                    placeholder="Ex.: Comprar itens de higiene"
+                    maxlength="80"
+                    required
+                >
+
+                <label for="descricao-anotacao">Descrição</label>
+                <textarea
+                    id="descricao-anotacao"
+                    name="descricao"
+                    placeholder="Escreva seu lembrete..."
+                    rows="4"
+                    maxlength="1000"
+                    required
+                ></textarea>
+
+                <button type="submit">Salvar anotação</button>
+
+            </form>
+        </section>
+
+        <section class="lista-anotacoes">
+            <h2>Anotações salvas</h2>
+
+            <p id="mensagem-anotacoes" aria-live="polite">
+                Suas anotações aparecerão aqui.
+            </p>
+
+            <div id="anotacoes-container"></div>
+        </section>
+
+        <p class="aviso-privacidade">
+            Os dados ficam salvos neste navegador.
+            Evite registrar informações médicas sensíveis.
+        </p>
+
+    </main>
+
+</body>
+</html>

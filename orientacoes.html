@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Informações educativas sobre sintomas, prevenção e cuidados com a saúde."
+    >
+
+    <title>Orientações de Saúde | Saúde+</title>
+
+    <link rel="stylesheet" href="global.css">
+    <script src="orientacoes.js" defer></script>
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <a href="dashboard.html" class="logo">Saúde+</a>
+
+        <nav class="navegacao" aria-label="Navegação principal">
+            <a href="dashboard.html">Início</a>
+            <a href="orientacoes.html" aria-current="page">
+                Orientações de Saúde
+            </a>
+            <a href="anotacoes.html">Anotações</a>
+        </nav>
+    </header>
+
+    <main class="pagina-orientacoes">
+
+        <section class="introducao-orientacoes">
+            <p class="etiqueta">INFORMAÇÃO E PREVENÇÃO</p>
+
+            <h1>Orientações de Saúde</h1>
+
+            <p>
+                Encontre informações educativas sobre sintomas,
+                prevenção e cuidados com a saúde.
+            </p>
+
+            <form id="form-busca">
+                <label for="busca-sintomas">
+                    Qual informação você procura?
+                </label>
+
+                <div class="campo-busca">
+                    <input
+                        type="search"
+                        id="busca-sintomas"
+                        name="sintoma"
+                        placeholder="Ex.: dor de cabeça"
+                        autocomplete="off"
+                    >
+
+                    <button type="submit">Pesquisar</button>                    
+                    <button type="button" data-categoria="todos">Todos</button>
+                    <button type="button" data-categoria="primeiros-socorros">Primeiros socorros</button>
+
+                </div>
+            </form>
+        </section>
+
+        <section class="categorias-orientacoes">
+            <h2>Explore por categoria</h2>
+
+            <p>
+                Escolha um tema para encontrar informações educativas.
+            </p>
+
+            <div class="lista-categorias">
+                <button type="button" data-categoria="sintomas">
+                    Sintomas comuns
+                </button>
+
+                <button type="button" data-categoria="prevencao">
+                    Prevenção
+                </button>
+
+                <button type="button" data-categoria="doencas">
+                    Doenças infecciosas
+                </button>
+
+                <button type="button" data-categoria="alertas">
+                    Sinais de alerta
+                </button>
+            </div>
+        </section>
+
+        <aside class="aviso-saude">
+            <h2>Informação importante</h2>
+
+            <p>
+                Os conteúdos são educativos e não substituem
+                a avaliação de um profissional de saúde.
+            </p>
+
+            <p>
+                Em caso de sintomas graves ou emergência,
+                procure atendimento médico imediatamente.
+            </p>
+        </aside>
+
+        <section
+            class="resultados-orientacoes"
+            aria-labelledby="titulo-resultados"
+        >
+            <h2 id="titulo-resultados">Resultados da pesquisa</h2>
+
+            <p id="mensagem-resultados" aria-live="polite">
+                Digite um termo acima para procurar informações.
+            </p>
+
+            <div id="lista-resultados"></div>
+        </section>
+
+    </main>
+
+</body>
+</html>
